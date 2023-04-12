@@ -1,0 +1,12 @@
+diff -up qt3d-everywhere-src-6.5.0/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp.omv~ qt3d-everywhere-src-6.5.0/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp
+--- qt3d-everywhere-src-6.5.0/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp.omv~	2023-04-12 02:44:14.596403239 +0200
++++ qt3d-everywhere-src-6.5.0/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp	2023-04-12 02:44:22.976483933 +0200
+@@ -50,7 +50,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ #include "FBXTokenizer.h"
+ #include "FBXUtil.h"
+ #include <assimp/defs.h>
+-#include <stdint.h>
++#include <cstdint>
+ #include <assimp/Exceptional.h>
+ #include <assimp/ByteSwapper.h>
+ #include <assimp/DefaultLogger.hpp>

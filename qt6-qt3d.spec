@@ -1,7 +1,7 @@
 #define beta rc
 
 Name:		qt6-qt3d
-Version:	6.4.2
+Version:	6.5.0
 Release:	%{?beta:0.%{beta}.1}%{?snapshot:1.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -9,6 +9,7 @@ Source:		qt3d-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
 %else
 Source:		http://download.qt-project.org/%{?beta:development}%{!?beta:official}_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}%{?beta:-%{beta}}/submodules/qt3d-everywhere-src-%{version}%{?beta:-%{beta}}.tar.xz
 %endif
+Patch0:		qt3d-6.5.0-compile.patch
 Group:		System/Libraries
 Summary:	Qt %{qtmajor} 3D Library
 BuildRequires:	cmake
