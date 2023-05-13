@@ -2,7 +2,7 @@
 
 Name:		qt6-qt3d
 Version:	6.5.0
-Release:	%{?beta:0.%{beta}.1}%{?snapshot:1.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.1}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qt3d-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -111,7 +111,6 @@ Example code for the Qt 6 3D module
 %autosetup -p1 -n qt3d%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
 %cmake -G Ninja \
 	-DCMAKE_INSTALL_PREFIX=%{_qtdir} \
-	-DQT_MKSPECS_DIR:FILEPATH=%{_qtdir}/mkspecs \
 	-DQT_BUILD_EXAMPLES:BOOL=ON \
 	-DQT_WILL_INSTALL:BOOL=ON \
 	-DBUILD_WITH_PCH:BOOL=OFF
@@ -122,6 +121,7 @@ export LD_LIBRARY_PATH="$(pwd)/build/lib:${LD_LIBRARY_PATH}"
 
 %install
 %ninja_install -C build
+%qt6_postinstall
 
 %files examples
 %{_qtdir}/examples
