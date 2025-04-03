@@ -1,4 +1,4 @@
-%define beta rc
+#define beta rc
 
 Name:		qt6-qt3d
 Version:	6.9.0
