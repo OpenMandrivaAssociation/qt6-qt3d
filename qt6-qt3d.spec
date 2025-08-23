@@ -1,4 +1,4 @@
-%define beta beta2
+%define beta beta3
 
 Name:		qt6-qt3d
 Version:	6.10.0
@@ -78,7 +78,7 @@ Qt %{qtmajor} 3D library
 %{_qtdir}/qml/Qt3D/Logic
 
 %global extra_devel_files_3DQuickLogic \
-%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicplugin*.cmake
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicplugin*.cmake
 
 %global extra_files_3DQuick \
 %{_qtdir}/qml/QtQuick/Scene3D
