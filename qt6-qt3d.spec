@@ -24,6 +24,8 @@ BuildRequires:	cmake(Qt6Qml)
 BuildRequires:	cmake(Qt6OpenGL)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6ShaderTools)
+BuildRequires:	cmake(Qt6Qml)
+BuildRequires:	cmake(Qt6QmlMeta)
 BuildRequires:	cmake(Qt6QmlModels)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	qt6-cmake
