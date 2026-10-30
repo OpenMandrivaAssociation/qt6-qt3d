@@ -2,7 +2,7 @@
 
 Name:		qt6-qt3d
 Version:	6.12.0
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qt3d-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -35,6 +35,13 @@ BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(vulkan)
 License:	LGPLv3/GPLv3/GPLv2
+
+%patchlist
+# CVE-2026-111487: morph-target buffers were sized from the first
+# target's attributes, so a later target with extra attributes wrote
+# past the buffer. The upstream test files are not in the 6.12.0
+# release tarball. 6.12: 8fd0b496ca9b (1eefe29327c5), QTBUG-150977
+qt3d-6.12.0-cve-2026-111487.patch
 
 %description
 Qt %{qtmajor} 3D library
